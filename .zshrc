@@ -3,7 +3,7 @@
 # ( ) # Hide shell job control messages.
 # Not supported in the "fish" shell.
 (cat ~/.cache/wal/sequences &)
-
+reset xterm
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 
@@ -167,6 +167,7 @@ alias vi="/opt/nvim/bin/nvim"
 alias vim="/opt/nvim/bin/nvim"
 alias nvim="/opt/nvim/bin/nvim"
 alias cme="/usr/bin/crackmapexec"
+alias bloodhound="/opt/bloodhound/BloodHound --no-sandbox &> /dev/null &"
 
 # Functions
 function mkt(){
@@ -196,12 +197,6 @@ function settarget(){
         fi
 }
 
-function bloodhound(){
-
-    echo -e "[*] Starting neo4j..."; sudo neo4j console & 
-    echo -e  "[*] Starting bloodhound..."; sleep 2; /opt/bloodhound/BloodHound --no-sandbox &>/dev/null & disown
-
-}
 
 function htb(){
 
